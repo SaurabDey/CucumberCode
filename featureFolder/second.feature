@@ -1,5 +1,6 @@
 Feature: I want to automate login feature with negative steps
 
+  @Regression
  Scenario Outline: Test all Negative
    Given I have the site
    When I provide incorrect credential <username> and <password>

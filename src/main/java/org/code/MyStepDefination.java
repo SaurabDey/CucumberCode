@@ -7,6 +7,7 @@ import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.Assert;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -53,10 +54,12 @@ public class MyStepDefination
     @Then("I should be in dashboard page")
     public void thencode()
     {
+        Assert.assertEquals(driver.getCurrentUrl(),"https://opensource-demo.orangehrmlive.com/index.php/dashboard");
         driver.quit();
     }
     @Then("^I should be in login page$")
     public void i_should_be_in_login_page(){
+        Assert.assertEquals(driver.getCurrentUrl(),"https://opensource-demo.orangehrmlive.com/index.php/auth/validateCredentials");
         driver.quit();
     }
 
