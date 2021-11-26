@@ -18,11 +18,7 @@ public class MyStepDefination
     @Given("I have the site")
     public void givenmethod()
     {
-        System.setProperty("webdriver.edge.driver","src/main/resources/msedgedriver.exe");
-        driver=new EdgeDriver();
-        driver.get("https://opensource-demo.orangehrmlive.com/");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+       driver=HooksClass.driver;
     }
 
     @When("I provide correct credential (\\w+) and (\\w+)")
@@ -55,12 +51,10 @@ public class MyStepDefination
     public void thencode()
     {
         Assert.assertEquals(driver.getCurrentUrl(),"https://opensource-demo.orangehrmlive.com/index.php/dashboard");
-        driver.quit();
     }
     @Then("^I should be in login page$")
     public void i_should_be_in_login_page(){
         Assert.assertEquals(driver.getCurrentUrl(),"https://opensource-demo.orangehrmlive.com/index.php/auth/validateCredentials");
-        driver.quit();
     }
 
 
